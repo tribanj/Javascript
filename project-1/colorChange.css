@@ -1,0 +1,65 @@
+/* *{
+    background-color: #e7e1e1;
+    color: aliceblue;
+} */
+.main-container{
+    width: 100vw;
+    height: 100vw;
+}
+.navbar{
+    display: flex;
+    justify-content: center;
+    background-color: black;
+}
+
+.btn{
+margin: 10px;
+padding: 2px;
+background-color: #080808;
+}
+.btn button{
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px;
+}
+.btn button:hover{
+    cursor: pointer;
+}
+.container{
+    /* display: flex; */
+    text-align: center;
+}
+.box{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    padding: 10px;
+}
+.box button:hover{
+    cursor: pointer;
+}
+.box button{
+    margin: 10px;
+    padding: 10px;
+    height: 80px;
+    width: 80px;
+}
+.box1 button{
+   background-color: yellow;
+}
+.box2 button{
+background-color: #e72828;
+}
+.box3 button{
+background-color: #1cdd5c;
+}
+.box4 button{
+background-color: #7c0a77;
+}
+
+.instruction{
+    text-align: center;
+    font-weight: 600;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}

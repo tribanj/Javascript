@@ -1,0 +1,82 @@
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(202, 197, 197);
+    height: 53px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.button {
+    border: 2px solid rgb(15, 7, 7);
+    background-color: #989797;
+    border-radius: 5px;
+    margin: 15px;
+    padding: 5px;
+    /* padding-top: 150px; */
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: aqua;
+    color: black;
+    transition: 0.3s ease-in;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #040404;
+}
+
+.container {
+    text-align: center;
+    align-items: center;
+    background-color: #7b7b7b;
+    max-width: max-content;
+    margin: auto;
+    border: 2px solid rgb(81, 159, 171);
+    border-radius: 25px;
+    margin-top: 50px;
+    padding: 10px;
+
+}
+input{
+    font-size: 23px;
+    border: none;
+    border-radius: 23px;
+    padding: 5px;
+    background: #998b8b;
+}
+label{
+    font-size: 23px;
+}
+button{
+    font-size:20px;
+    border-radius: 10px;
+
+}
+#result{
+    /* border: 1px solid green; */
+    font-size: 20px;
+    margin: 5px;
+    padding: 5px;
+    color: white;
+    font-weight: bold;
+}
+#clock{
+    /* height: 50px; */
+    border: 1px solid yellow;
+    border-radius: 23px;
+    width: 150px;
+    margin: auto;
+    margin-top: 10px;
+    background-color: rgb(60, 60, 47);
+    color: white;
+    padding:5px;
+    
+}
