@@ -1,0 +1,83 @@
+#this file is only for notes
+
+word vs keyword
+word *********************
+Tribhuwan 
+id
+ good
+ boy
+
+
+*****keyword*********************88
+ for 
+ if
+ var let 
+
+ *********var const *************
+cnst  dulha = lab;
+const  dulhan = labi;
+
+var dulha = lab;
+var dulhan = labi;
+
+shadi = dulha + "weds" + dulhan;
+
+console.log(shadi);
+
+ variables and constant 
+
+ ***************hoisting*******************
+ variables and functions are hoisted which means there declaration 
+ is moved on the top of code
+
+ exp={
+    var a ; //declaration
+
+    a=7; //initialization
+ }
+
+
+ ****************types in js ********************
+ primitives=number, string, null, undefined, boolean 
+ reference = [] () {}
+
+ a= [1,2,3,4,]
+ b = a;
+ b.pop();
+it occurs changes in both a abnd b bcz b has not its own value 
+it passes the reference of a
+
+
+//conditionals if, else, else-if
+
+if(){
+
+}else if(){
+
+}else if(){
+
+}else{
+
+}
+
+
+loops - for and while **************
+ to print -> 0 - 10;
+  for(i=10; i<20; i++){
+    console.log(i);
+  }
+
+
+  while(a<20){
+    console.log()
+  }
+
+
+
+
+***************************** function*******************
+function abcd(){
+
+}
+argyuments = real value jo hum dete hain fnc chalate wakt 
+parameters = variables jinme value store hoti hai parameter  wali 
