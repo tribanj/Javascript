@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 hello guys Node js start form here
+=======
+Today is owsem dayplz study everyday
+>>>>>>> 6f6ef66eeb11cc281d3b85864264629ee69c93e7
