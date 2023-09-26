@@ -1,0 +1,123 @@
+[
+    {
+      "id": 1,
+      "name": "John Doe",
+      "username": "johndoe123",
+      "email": "john.doe@example.com",
+      "phone": "555-123-4567",
+      "address": {
+        "street": "123 Main Street",
+        "city": "New York",
+        "zipcode": "10001"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Alice Smith",
+      "username": "alicesmith456",
+      "email": "alice.smith@example.com",
+      "phone": "555-987-6543",
+      "address": {
+        "street": "456 Elm Avenue",
+        "city": "Los Angeles",
+        "zipcode": "90002"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Bob Johnson",
+      "username": "bob.johnson789",
+      "email": "bob.johnson@example.com",
+      "phone": "555-555-5555",
+      "address": {
+        "street": "789 Oak Road",
+        "city": "Chicago",
+        "zipcode": "60603"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Emily Davis",
+      "username": "emilydavis321",
+      "email": "emily.davis@example.com",
+      "phone": "555-789-1234",
+      "address": {
+        "street": "321 Maple Street",
+        "city": "Houston",
+        "zipcode": "77001"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Michael Wilson",
+      "username": "michaelwilson555",
+      "email": "michael.wilson@example.com",
+      "phone": "555-234-5678",
+      "address": {
+        "street": "555 Pine Avenue",
+        "city": "San Francisco",
+        "zipcode": "94101"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Olivia Lee",
+      "username": "olivialeexyz",
+      "email": "olivia.lee@example.com",
+      "phone": "555-876-5432",
+      "address": {
+        "street": "987 Cedar Lane",
+        "city": "Miami",
+        "zipcode": "33101"
+      }
+    },
+    {
+      "id": 7,
+      "name": "David Brown",
+      "username": "davidbrown777",
+      "email": "david.brown@example.com",
+      "phone": "555-432-1098",
+      "address": {
+        "street": "777 Birch Drive",
+        "city": "Dallas",
+        "zipcode": "75201"
+      }
+    },
+    {
+      "id": 8,
+      "name": "Sophia White",
+      "username": "sophiawhite999",
+      "email": "sophia.white@example.com",
+      "phone": "555-567-8901",
+      "address": {
+        "street": "999 Willow Street",
+        "city": "Phoenix",
+        "zipcode": "85001"
+      }
+    },
+    {
+      "id": 9,
+      "name": "James Harris",
+      "username": "jamesharris222",
+      "email": "james.harris@example.com",
+      "phone": "555-321-8765",
+      "address": {
+        "street": "222 Redwood Road",
+        "city": "Philadelphia",
+        "zipcode": "19101"
+      }
+    },
+    {
+      "id": 10,
+      "name": "Lily Turner",
+      "username": "lilyturner444",
+      "email": "lily.turner@example.com",
+      "phone": "555-678-2345",
+      "address": {
+        "street": "444 Walnut Lane",
+        "city": "Seattle",
+        "zipcode": "98101"
+      }
+    }
+  ]
+  
