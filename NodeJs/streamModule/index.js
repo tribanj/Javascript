@@ -10,17 +10,25 @@ server.on("request", (req, res) => {
   //     res.end(data.toString());
   //   });
 
-  const rStream = fs.createReadStream("input.txt");
-  rStream.on("data", (chunkdata) => {
-    res.write(chunkdata);
-  });
-  rStream.on("end", () => {
-    res.end();
-  });
-  rStream.on("error", (err) => {
-    console.log(err);
-    res.end();
-  });
+
+//   2nd way 
+//   const rStream = fs.createReadStream("input.txt");
+//   rStream.on("data", (chunkdata) => {
+//     res.write(chunkdata);
+//   });
+//   rStream.on("end", () => {
+//     res.end();
+//   });
+//   rStream.on("error", (err) => {
+//     console.log(err);
+//     res.end();
+//   });
+
+
+
+// 3rd way 
+const rStream = fs.createReadStream("input.txt");
+rStream.pipe(res);
 });
 
 server.listen(8000, "127.0.0.1");
