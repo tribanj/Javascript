@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel Sheets to HTML Table</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.0/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.3/xlsx.full.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.3/jszip.js"></script> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"
+        integrity="sha512-r22gChDnGvBylk90+2e/ycr3RVrDi8DIOkIGNhJlKfuyQM4tIRAI062MaV8sfjQKYVGjOBaZBOA87z+IhZE9DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- This script tag imports the xlsx.full.min.js library which provides functions to read Excel files in JavaScript. -->
+
+    <style>
+        tr {
+            background-color: gray;
+        }
+
+        /* This CSS selector sets the background color of every other row to light gray. */
+
+        tr:nth-child(2n) {
+            background-color: lightgray;
+        }
+
+        label {
+            display: block;
+            font:
+                1rem 'Fira Sans',
+                sans-serif;
+        }
+
+        input,
+        label {
+            margin: 0.4rem 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="table"></div>
+    <div id="localData"></div>
+    <!-- This empty div will contain the HTML table generated from the Excel file. -->
+    <label for="fileSelect">Spreadsheet</label>
+    <input id="fileSelect" type="file"
+        accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
+
+    <button type="submit" onclick="saveFileDataToLocalstorage()">Submit</button>
+
+    <!-- <script>
+        let table = document.querySelector(".table");
+        (
+            async () => {
+                let workbook = XLSX.read(await (await fetch("./excel.xlsx")).arrayBuffer());
+                //console.log(workbook);
+                let worksheet = workbook.SheetNames;
+                worksheet.forEach(name => {
+                    let html = XLSX.utils.sheet_to_html(workbook.Sheets[name]);
+                    table.innerHTML += `
+                    <h3>${name}</h3>${html}
+                    `;
+                })
+            }
+        )()
+    </script> -->
+    <script>
+        // Function to handle the file upload
+        function saveFileDataToLocalstorage() {
+            const input = document.getElementById('fileSelect');
+            const file = input.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    const data = e.target.result;
+
+                    // Parse the Excel data using a library like SheetJS (xlsx)
+                    const workbook = XLSX.read(data, { type: 'array' });
+
+                    // Assuming the first sheet is the one you want to parse
+                    const sheetName = workbook.SheetNames[0];
+                    const worksheet = workbook.Sheets[sheetName];
+
+                    // Convert Excel data to JSON (you can also use CSV)
+                    const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+
+                    // Store the JSON data in local storage
+                    localStorage.setItem('excelData', JSON.stringify(jsonData));
+
+                    alert('Excel data stored in local storage.');
+                };
+
+                reader.readAsArrayBuffer(file);
+            } else {
+                alert('Please select an Excel file.');
+            }
+        }
+    </script>
+
+    <button onclick="exportLocalDataToXLSX()">Export Data as XLSX</button>
+    
+    <script>
+        // Function to display local storage data as an HTML table
+        function displayLocalDataAsTable() {
+            const localData = JSON.parse(localStorage.getItem('excelData'));
+            const tableElement = document.querySelector(".table");
+
+            if (!localData || localData.length === 0) {
+                tableElement.innerHTML = "No data in local storage.";
+                return;
+            }
+
+            let html = '<table border="1"><tr>';
+            for (let header in localData[0]) {
+                html += `<th>${header}</th>`;
+            }
+            html += '</tr>';
+
+            localData.forEach(row => {
+                html += '<tr>';
+                for (let key in row) {
+                    html += `<td>${row[key]}</td>`;
+                }
+                html += '</tr>';
+            });
+
+            html += '</table>';
+            tableElement.innerHTML = html;
+        }
+
+        // Call the function to display local storage data as a table when the page loads
+        window.onload = function () {
+            displayLocalDataAsTable();
+        };
+
+        // Function to export data from local storage as XLSX (same as in previous response)
+        function exportLocalDataToXLSX() {
+            // ... (code for exporting data to XLSX, as shown in the previous response) ...
+        }
+    </script>
+</body>
+
+</html>
