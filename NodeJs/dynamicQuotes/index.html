@@ -11,19 +11,28 @@
     <div id="quotes"></div>
     <div id="auther"></div>
     <button id="newQ">New Quotes</button>
+    <button id="tweetMe">Tweet</button>
 
     <script>
         const quotes = document.getElementById("quotes");
         const auther = document.getElementById("auther");
         const newQ = document.getElementById("newQ");
+        const tweetMe = document.getElementById('tweetMe')
         let realData = "";
-
+        let quotesData = "";
+        const tweetNow = () =>{
+           let tweetPost =  "http://twitter.com/intent/tweet" ;
+           window.open(tweetPost);
+        }
+        const getNewQuotes = () => {
+            let rnum = Math.floor(Math.random() * 10);
+            quotesData = realData[rnum];
+            quotes.innerText = `${quotesData.text}`;
+            quotesData.auther == null
+                ? (auther.innerText = "unKnown")
+                : (auther.innerText = `${quotesData.auther}`);
+        }
         const getQuotes = async () => {
-            const getNewQuotes = () => {
-                let rnum = Math.floor(Math.random() * 10);
-                quotes.innerText = `${realData[rnum].text}`;
-                auther.innerText = `${realData[rnum].author}`;
-            }
             const api = "http://type.fit/api/quotes";
 
             try {
@@ -33,6 +42,7 @@
                 // <!-- console.log(realData.length); -->
             } catch (error) { }
         };
+        tweetMe.addEventListener("click", tweetNow);
         newQ.addEventListener("click", getQuotes);
         getQuotes();
     </script>
