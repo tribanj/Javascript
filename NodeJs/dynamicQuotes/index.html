@@ -4,14 +4,36 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/f877c7062b.js" crossorigin="anonymous"></script>
     <title>new Quotes</title>
 </head>
 
 <body>
-    <div id="quotes"></div>
+    <!-- <div id="quotes"></div>
     <div id="auther"></div>
     <button id="newQ">New Quotes</button>
-    <button id="tweetMe">Tweet</button>
+    <button id="tweetMe">Tweet</button> -->
+
+
+    <div class="container">
+        <div class="inner">
+            <div class="box">
+                <p class="number">
+                    <i class="fa-brands fa-twitter" title="TweetMe" id="tweetMe"></i>
+                </p>
+
+                <div class="text">
+                    <i class="start-quote fa-solid fa-quote-left"></i>
+                    <p id="quotes" class="quote "></p>
+                    <p id="auther" class="auther"></p>
+                </div>
+
+                <label class="button">
+                    <p id="newQ">New Quotes</p>
+                </label>
+            </div>
+        </div>
+    </div>
 
     <script>
         const quotes = document.getElementById("quotes");
@@ -20,9 +42,9 @@
         const tweetMe = document.getElementById('tweetMe')
         let realData = "";
         let quotesData = "";
-        const tweetNow = () =>{
-           let tweetPost =  "http://twitter.com/intent/tweet" ;
-           window.open(tweetPost);
+        const tweetNow = () => {
+            let tweetPost = `http://twitter.com/intent/tweet?text=${quotesData.text} ${quotesData.auther}`;
+            window.open(tweetPost);
         }
         const getNewQuotes = () => {
             let rnum = Math.floor(Math.random() * 10);
