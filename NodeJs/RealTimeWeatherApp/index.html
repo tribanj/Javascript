@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/f877c7062b.js" crossorigin="anonymous"></script>
-    <title>Weather App</title>
     <link rel="stylesheet" href="./style.css">
+    <title>Weather App</title>
 </head>
 
 <body>
     <div class="box">
         <div class="wave one"></div>
         <div class="wave two"></div>
-        <div class "wave three"></div>
+        <div class="wave three"></div>
 
         <div id="weathercon">
             <i class="fa-solid fa-sun fas" style="color: #eccc68"></i>
@@ -25,17 +25,16 @@
             </h2>
             <p id="date">WED | OCT 23 | 10:50</p>
             <h1 class="temp">{%tempval%}&deg;C </h1>
-            <h3 class="tempmin_max">Min {%tempmin%}&deg;C| Max {%tempmax%} &deg;C</h3>
+            <h3 class="tempmin_max">Min {%tempmin%}&deg;C| Max {%tempmax%} &deg;C  {result} </h3>
         </div>
     </div>
 
     <script>
         const curDate = document.getElementById("date");
-        let weathercon = document.getElementById("weathercon"); // Corrected the variable name
-
+        let weathercon = document.getElementById("weathercon"); 
         const tempStatus = "{%tempStatus%}";
 
-        if (tempStatus === "Sunny") { // Used double equal signs for comparison
+        if (tempStatus === "Sunny") { 
             weathercon.innerHTML = "<i class='fas fa-sun' style='color: #eccc68;'></i>";
         } else if (tempStatus === "Clouds") {
             weathercon.innerHTML = "<i class='fas fa-cloud' style='color: #f1f2f6;'></i>";
@@ -50,7 +49,7 @@
             weekday[0] = "Sunday";
             weekday[1] = "Monday";
             weekday[2] = "Tuesday";
-            weekday[3] = "Wednesday"; // Corrected "WednesDay" to "Wednesday"
+            weekday[3] = "Wednesday";
             weekday[4] = "Thursday";
             weekday[5] = "Friday";
             weekday[6] = "Saturday";
@@ -90,10 +89,10 @@
                 mins = "0" + mins;
             }
 
-            return `${month} ${date} | ${hours}:${mins} ${period}`; // Added missing colon
+            return `${month} ${date} | ${hours}:${mins} ${period}`; 
         }
 
-        curDate.innerHTML = getCurrentDay() + " | " + getCurrentTime(); // Corrected the function call
+        curDate.innerHTML = getCurrentDay() + " | " + getCurrentTime(); 
     </script>
 </body>
 

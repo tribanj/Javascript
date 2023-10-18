@@ -3,17 +3,18 @@ var requests = require("requests");
 
 const fs = require("fs");
 
-const homeFile = fs.readFileSync("home.html", "utf-8");
+const homeFile = fs.readFileSync("index.html", "utf-8");
 
 const replaceVal = (tempVal, orgVal) => {
-  let tempreture = tempVal.replace("{%tempval%}", orgVal.main.temp);
-  tempreture = tempreture.replace("{%tempmin%}", orgVal.main.temp_min);
-  tempreture = tempreture.replace("{%tempmax%}", orgVal.main.temp_max);
-  tempreture = tempreture.replace("{%location%}", orgVal.name);
-  tempreture = tempreture.replace("{%country%}", orgVal.sys.country);
-  tempreture = tempreture.replace("{%tempStatus%}", orgVal.weather.main);
-  return tempreture;
+  let temperature = tempVal.replace("{%tempval%}", orgVal.main.temp);
+  temperature = temperature.replace("{%tempmin%}", orgVal.main.temp_min);
+  temperature = temperature.replace("{%tempmax%}", orgVal.main.temp_max);
+  temperature = temperature.replace("{%location%}", orgVal.name);
+  temperature = temperature.replace("{%country%}", orgVal.sys.country);
+  temperature = temperature.replace("{%tempStatus%}", orgVal.weather[0].main); // Access the first weather object using [0].
+  return temperature;
 };
+
 
 const server = http.createServer((req, res) => {
   if (req.url == "/") {
@@ -24,6 +25,9 @@ const server = http.createServer((req, res) => {
         const objData = JSON.parse(chunk);
         const arrData = [objData];
           console.log(objData.main.temp);
+
+          res.render(homeFile, {result:arrData})
+
         const realTimeData = arrData.map((val) => replaceVal(homeFile, val)).join("");
         res.write(realTimeData);
         // console.log(realTimeData);
