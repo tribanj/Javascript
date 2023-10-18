@@ -26,7 +26,7 @@ html {
 }
 
 .box {
-    width: 20vw;
+    width: 40vw;
     height: 60vh;
     border-radius: 0.5rem;
     box-shadow: 0 0.2rem 3rem rgba(0, 0, 0, 0.2);
@@ -171,5 +171,44 @@ html {
 
     to {
         transform: scale(1.2);
+    }
+}
+
+@media (max-width: 600px) {
+    .box {
+        width: 90vw;
+        height: 80vh;
+    }
+
+    .wave {
+        top: 85%;
+
+    }
+
+    #weathercon {
+        font-size: 5em;
+    }
+
+    .info {
+        font-size: 1.5rem;
+    }
+
+}
+
+
+@media(max-width:500px) {
+    .box {
+        height: 80vh;
+        ;
+    }
+
+    .wave {
+        top: 115%;
+    }
+
+    body> {
+        width: 100vw;
+        text-align: center;
+        color: gray;
     }
 }

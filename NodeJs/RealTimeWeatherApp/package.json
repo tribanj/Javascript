@@ -1,0 +1,14 @@
+{
+  "name": "realtimeweatherapp",
+  "version": "1.0.0",
+  "description": "creating weather app node js",
+  "main": "Index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tribhuwan",
+  "license": "ISC",
+  "dependencies": {
+    "requests": "^0.3.0"
+  }
+}
