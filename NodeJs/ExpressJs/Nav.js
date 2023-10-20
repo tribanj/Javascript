@@ -1,9 +1,9 @@
 const express = require("express");
-
+const PORT = 3000;
 const app = express();
 
 app.get("/", (req, res) => {
-  console.log("hello from home page");
+  res.send("<h1>hello from home page</h1>");
 });
 
 app.get("/about", (req, res) => {
@@ -18,6 +18,6 @@ app.get("/temp", (req, res) => {
   console.log("hello from Temperature page");
 });
 
-app.listen(8000, () => {
-  console.log("listning on port 8000");
+app.listen(PORT, () => {
+  console.log(`listning on port ${PORT}`);
 });
