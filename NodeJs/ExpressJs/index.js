@@ -14,6 +14,9 @@ app.get("/about", (req, res) => {
 app.get("/contact_us", (req, res) => {
   res.send("Hello from the about");
 });
+app.get("/testimonials", (req, res) => {
+  res.send("Hello from the about");
+});
 
 
 app.listen(8000, () => {
