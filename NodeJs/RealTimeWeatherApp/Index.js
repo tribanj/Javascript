@@ -30,6 +30,7 @@ const server = http.createServer((req, res) => {
 
         const realTimeData = arrData.map((val) => replaceVal(homeFile, val)).join("");
         res.write(realTimeData);
+        res.end();
         // console.log(realTimeData);
       })
       .on("end", (err) => {
