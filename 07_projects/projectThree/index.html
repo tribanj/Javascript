@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital clock</title>
+    <style>
+        .center {
+            display: flex;
+            margin-top: 50%;
+            margin-left: 50%;
+
+        }
+
+        body {
+            background-color: #131212;
+            color: white;
+        }
+
+        #banner {
+            margin: 20px;
+            border: 2px solid red;
+        }
+
+        #clock {
+            background-color: yellow;
+            color: black;
+            height: 50px;
+            margin: 10px;
+            padding: 10px;
+            width: 100px;
+            border: 5px solid black;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="btn">
+            <a href="/home" class="button">Home</a>
+            <a href="http://www.youtube.com/@tribhuwanm" class="button">YouTube Channel</a>
+        </div>
+    </div>
+
+    <div class="center">
+        <div id="banner"><span>Your Local Time</span></div>
+        <div id="clock"></div>
+    </div>
+
+    <script src="./three.js"></script>
+</body>
+
+</html>
