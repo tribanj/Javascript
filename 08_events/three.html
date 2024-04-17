@@ -14,13 +14,13 @@
 
     <script>
         let intervalId; 
-        
+
         const sayDate = function (str) {
             console.log(str, Date.now());
         }
 
         document.querySelector('#start').addEventListener("click", function () {
-            intervalId = setInterval(sayDate, 1000, 'hi'); // Assign intervalId here
+            intervalId = setInterval(sayDate, 1000, 'hi');
         });
 
         document.querySelector('#stop').addEventListener('click', function () {
