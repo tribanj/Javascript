@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html Events</title>
+</head>
+
+<body style="background-color: #414141; color:aliceblue">
+    <h2>Amazing Events</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop"
+                    src="https://images.unsplash.com/photo-1500964757637-c85e8a162699?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHJhbmRvbSUyMG5hdHVyZSUyMGltYWdlfGVufDB8fDB8fHww"
+                    alt="unsplash"> </li>
+            <li><img width="200px" id="student"
+                    src="https://images.unsplash.com/photo-1474291102916-622af5ff18bb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHJhbmRvbSUyMG5hdHVyZSUyMGltYWdlfGVufDB8fDB8fHww"
+                    alt="unsplash"> </li>
+            <li><img width="200px" id="stars"
+                    src="https://images.unsplash.com/photo-1496715976403-7e36dc43f17b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHJhbmRvbSUyMG5hdHVyZSUyMGltYWdlfGVufDB8fDB8fHww"
+                    alt="unsplash"> </li>
+            <li><img width="200px" id="tree"
+                    src="https://images.unsplash.com/photo-1707504735422-2f3baaff4693?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fHJhbmRvbSUyMG5hdHVyZSUyMGltYWdlfGVufDB8fDB8fHww"
+                    alt="river"> </li>
+            <li><img width="200px" id="flower"
+                    src="https://images.unsplash.com/photo-1706639324153-8cb8c2fb5bea?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjl8fHJhbmRvbSUyMG5hdHVyZSUyMGltYWdlfGVufDB8fDB8fHww"
+                    alt=""> </li>
+            <li><img width="200px" id="parrot"
+                    src="https://images.unsplash.com/photo-1675497219360-270db3f96e06?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fHJhbmRvbSUyMG5hdHVyZSUyMGltYWdlfGVufDB8fDB8fHww"
+                    alt=""> </li>
+            <li> <a href="http://www.google.com" id="google" style="color:aliceblue;">go to google</a></li>
+
+        </ul>
+    </div>
+
+
+    <script>
+        // <!-- document.getElementById('parrot').onclick = function(){
+        //alert('Parrot clicked')
+        //} -->
+
+        //<!-- to read  -->
+        //type, timeStamp, defaultPrevent,target, toElement, srcElement, 
+
+        // clientX, clienty, screenX,screenY, ect for interview
+        //altkey, ctlkey, shiftkey,keycode 
+
+        //attachEvent()  for run your application on internet explorer
+        //jQuery - on
+
+
+        document.getElementById('images').addEventListener('click', function (e) {
+            //alert('parrot clicked Again')
+            // console.log('Clocked inside the ul');
+        }, false)
+
+        //document.getElementById('parrot').addEventListener('click', function (e) {
+        //alert('parrot clicked Again')
+        // console.log('parrot clicked');
+        //  e.stopPropagation()
+        // }, false)
+
+        document.getElementById('google').addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            // console.log('google clicked');
+        }, false)
+
+        ///project style me code 
+
+        document.querySelector('#images').addEventListener('click', function (e) {
+            console.log(e.target.parentNode.tagName)
+            if (e.target.tagName === 'IMG') {
+                console.log(e.target.id);
+                let removeIt = e.target.parentNode
+                removeIt.remove()
+            }
+
+            //console.log(object);
+        }, false)
+    </script>
+</body>
