@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clouser aur chai</title>
+</head>
+
+<body style="background-color: black;">
+    <script>
+        // function init() {
+        //     let name = "mozilla"
+
+        //   function displayName() {
+        //       console.log(name);
+        // }
+        // displayName()
+        //  }
+        //  init();
+
+        function outer() {
+            let username = "tribhuwan"
+
+            function inner() {
+                console.log("INNER", username);
+            }
+            inner()
+        }
+        outer()
+        console.log("TOO Outer", username);
+    </script>
+</body>
+
+</html>
